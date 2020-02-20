@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ONK_Delprojekt1_Backend", "ONK_Delprojekt1_Backend\ONK_Delprojekt1_Backend.csproj", "{AA7F3F30-88B0-42C4-B7C8-202C2520DFEF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA7F3F30-88B0-42C4-B7C8-202C2520DFEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA7F3F30-88B0-42C4-B7C8-202C2520DFEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA7F3F30-88B0-42C4-B7C8-202C2520DFEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA7F3F30-88B0-42C4-B7C8-202C2520DFEF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2CAB5979-1D2B-436F-84F6-1CC718AF499A}
+	EndGlobalSection
+EndGlobal
