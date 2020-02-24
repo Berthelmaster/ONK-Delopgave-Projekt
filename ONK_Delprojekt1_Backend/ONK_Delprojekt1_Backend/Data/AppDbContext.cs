@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using ONK_Delprojekt1_Backend.Models;
 using System.Configuration;
 using System.Data.SqlClient;
-using MySql.Data.EntityFrameworkCore;
+using Pomelo.EntityFrameworkCore.MySql;
 //using RestApi;
 
 namespace ONK_Delprojekt1_Backend.Data
@@ -27,7 +27,7 @@ namespace ONK_Delprojekt1_Backend.Data
             protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             {
                 //var connectionString = ConfigurationManager.ConnectionStrings["DitStamtrae"].ConnectionString;
-                optionsBuilder.UseMySQL("server=localhost;Data Source=testONK.db");
+                optionsBuilder.UseMySql("Server=localhost;Database=testONK.db;Uid=root;Pwd=root;");
             }
 
             protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -8,10 +8,10 @@ namespace ONK_Delprojekt1_Backend.Models
 {
     public partial class Vaerktoejskasse
     {
-        //public Vaerktoejskasse()
-        //{
-        //    Vaerktoej = new HashSet<Vaerktoej>();
-        //}
+        public Vaerktoejskasse()
+        {
+            Vaerktoej = new HashSet<Vaerktoej>();
+        }
         [Key]
         public int VTKId { get; set; }
         public DateTime VTKAnskaffet { get; set; }

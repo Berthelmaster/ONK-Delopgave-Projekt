@@ -8,10 +8,10 @@ namespace ONK_Delprojekt1_Backend.Models
 {
     public partial class Haandvaerker
     {
-        //public Haandvaerker()
-        //{
-        //    Vaerktoejskasse = new HashSet<Vaerktoejskasse>();
-        //}
+        public Haandvaerker()
+        {
+            Vaerktoejskasse = new HashSet<Vaerktoejskasse>();
+        }
         [Key]
         public int HaandvaerkerId { get; set; }
         public DateTime HVAnsaettelsedato { get; set; }
