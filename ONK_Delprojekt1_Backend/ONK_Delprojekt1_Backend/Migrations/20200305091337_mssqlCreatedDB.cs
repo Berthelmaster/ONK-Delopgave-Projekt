@@ -1,10 +1,9 @@
 ﻿using System;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ONK_Delprojekt1_Backend.Migrations
 {
-    public partial class setupDB : Migration
+    public partial class mssqlCreatedDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +12,7 @@ namespace ONK_Delprojekt1_Backend.Migrations
                 columns: table => new
                 {
                     HaandvaerkerId = table.Column<int>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     HVAnsaettelsedato = table.Column<DateTime>(nullable: false),
                     HVEfternavn = table.Column<string>(nullable: true),
                     HVFagomraade = table.Column<string>(nullable: true),
@@ -29,7 +28,7 @@ namespace ONK_Delprojekt1_Backend.Migrations
                 columns: table => new
                 {
                     VTKId = table.Column<int>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     VTKAnskaffet = table.Column<DateTime>(nullable: false),
                     VTKFabrikat = table.Column<string>(nullable: true),
                     VTKEjesAf = table.Column<int>(nullable: true),
@@ -42,7 +41,7 @@ namespace ONK_Delprojekt1_Backend.Migrations
                 {
                     table.PrimaryKey("PK_Vaerktoejskasser", x => x.VTKId);
                     table.ForeignKey(
-                        name: "FK_Vaerktoejskasser_Haandvaerkerer_EjesAfNavigationHaandvaerker~",
+                        name: "FK_Vaerktoejskasser_Haandvaerkerer_EjesAfNavigationHaandvaerkerId",
                         column: x => x.EjesAfNavigationHaandvaerkerId,
                         principalTable: "Haandvaerkerer",
                         principalColumn: "HaandvaerkerId",
@@ -54,7 +53,7 @@ namespace ONK_Delprojekt1_Backend.Migrations
                 columns: table => new
                 {
                     VTId = table.Column<long>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     VTAnskaffet = table.Column<DateTime>(nullable: false),
                     VTFabrikat = table.Column<string>(nullable: true),
                     VTModel = table.Column<string>(nullable: true),
