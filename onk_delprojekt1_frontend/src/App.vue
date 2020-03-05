@@ -1,42 +1,41 @@
 <template>
   <v-app>
-    <router-view></router-view>
+    
     <v-app-bar
       app
-      color="primary"
       dark
     >
-      <div class="d-flex align-center">
-      <h1>Den bedste ONK App</h1>
-      </div>
+     <v-toolbar-items>
+        <v-btn to="/">Frontpage</v-btn>
+        <v-btn to="/Create">Create</v-btn>
+        <v-btn to="/Delete">Delete</v-btn>
+        <v-btn to="/Read">Read</v-btn>
+        <v-btn to="/Update">Update</v-btn>
+      </v-toolbar-items>
+      
+      
 
 
-      <v-spacer></v-spacer>
+      
+      
 
-      <v-btn
-        href="https://github.com/Berthelmaster/ONK-Delopgave-Projekt/tree/master"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+
+      
     </v-app-bar>
 
     <v-content>
-      <Frontpage/>
+      <router-view></router-view>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import Frontpage from './views/Frontpage';
 
 export default {
   name: 'App',
 
   components: {
-    Frontpage,
+    
   },
 
   data: () => ({
