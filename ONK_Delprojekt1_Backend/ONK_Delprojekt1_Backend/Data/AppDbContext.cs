@@ -30,7 +30,6 @@ namespace ONK_Delprojekt1_Backend.Data
             optionsBuilder.UseSqlServer("data source=localhost;Database=testONK.db; " +
                 "initial catalog=testOnk.dk; persist security info = True;Integrated Security = SSPI");
            
-            //;Uid=root;Pwd=root;
             //optionsBuilder.UseMySql("Server=localhost;Database=testONK.db;Uid=root;Pwd=root;");
         }
 
