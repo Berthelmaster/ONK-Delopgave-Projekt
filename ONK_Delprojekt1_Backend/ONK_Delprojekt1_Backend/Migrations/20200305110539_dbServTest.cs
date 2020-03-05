@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ONK_Delprojekt1_Backend.Migrations
 {
-    public partial class mssqlCreatedDB : Migration
+    public partial class dbServTest : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

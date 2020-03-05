@@ -24,14 +24,14 @@ namespace ONK_Delprojekt1_Backend.Data
             public DbSet<Vaerktoejskasse> Vaerktoejskasser{ get; set; }
 
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            //var connectionString = ConfigurationManager.ConnectionStrings["DitStamtrae"].ConnectionString;
-            optionsBuilder.UseSqlServer("data source=localhost;Database=testONK.db; " +
-                "initial catalog=testOnk.dk; persist security info = True;Integrated Security = SSPI");
-           
-            //optionsBuilder.UseMySql("Server=localhost;Database=testONK.db;Uid=root;Pwd=root;");
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    //var connectionString = ConfigurationManager.ConnectionStrings["DitStamtrae"].ConnectionString;
+        //    optionsBuilder.UseSqlServer("data source=localhost;Database=testONK.db; " +
+        //        "initial catalog=testOnk.dk; persist security info = True;Integrated Security = SSPI");
+
+        //    //optionsBuilder.UseMySql("Server=localhost;Database=testONK.db;Uid=root;Pwd=root;");
+        //}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
             {

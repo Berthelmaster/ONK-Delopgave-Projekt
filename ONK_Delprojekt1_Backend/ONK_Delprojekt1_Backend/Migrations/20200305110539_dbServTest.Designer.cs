@@ -10,8 +10,8 @@ using ONK_Delprojekt1_Backend.Data;
 namespace ONK_Delprojekt1_Backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20200305091337_mssqlCreatedDB")]
-    partial class mssqlCreatedDB
+    [Migration("20200305110539_dbServTest")]
+    partial class dbServTest
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
