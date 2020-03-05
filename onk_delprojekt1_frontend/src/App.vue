@@ -1,15 +1,15 @@
 <template>
   <v-app>
+    <router-view></router-view>
     <v-app-bar
       app
       color="primary"
       dark
     >
       <div class="d-flex align-center">
-      <h1>Den bedste ONK App</h1>  
-
-      
+      <h1>Den bedste ONK App</h1>
       </div>
+
 
       <v-spacer></v-spacer>
 
@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import Frontpage from './components/Frontpage';
+import Frontpage from './views/Frontpage';
 
 export default {
   name: 'App',
