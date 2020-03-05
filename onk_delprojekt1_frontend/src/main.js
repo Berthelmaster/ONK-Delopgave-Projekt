@@ -14,7 +14,7 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   routes: [
     {
-      path: '', component: Frontpage
+      path: '/', component: Frontpage
     },
     {
       path: '/Create', component: Create
@@ -30,7 +30,7 @@ const router = new VueRouter({
     }
   ],
   mode: 'history'
-})
+});
 
 new Vue({
   vuetify,
