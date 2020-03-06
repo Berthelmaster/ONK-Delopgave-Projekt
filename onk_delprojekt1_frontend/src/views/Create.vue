@@ -8,22 +8,19 @@
                         v-model="valid"
                         lazy-validation>
 
-                        <v-text-field v-model="name" label="name">
-                        </v-text-field>
-
                         <v-select
                         v-model="select"
                         :items="items"
                         label="Start Date"
                         ></v-select>
 
-                        <v-text-field v-model="name1">
+                        <v-text-field v-model="Surname" label="Surname">
                         </v-text-field>
 
-                        <v-text-field v-model="name2">
+                        <v-text-field v-model="Field" label="Field of Work">
                         </v-text-field>
 
-                        <v-text-field v-model="name3">
+                        <v-text-field v-model="firstName" label="First name">
                         </v-text-field>
                     </v-form>
                 </div>
@@ -38,7 +35,9 @@
 </template>
 
 <script>
+
 export default {
+    
     data: () => ({
         items: [
             new Date()
