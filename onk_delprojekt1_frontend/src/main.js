@@ -7,9 +7,12 @@ import Delete from './views/Delete.vue'
 import Read from './views/Read.vue'
 import Update from './views/Update.vue'
 import Frontpage from './views/Frontpage.vue'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
+Vue.use(VueAxios, axios)
 
 const router = new VueRouter({
   routes: [

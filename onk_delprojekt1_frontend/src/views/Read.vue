@@ -13,3 +13,21 @@
         </v-row>
     </v-container>
 </template>
+
+
+<script>
+import axios from 'axios';
+
+export default {
+    data() {
+        return {
+            posts: []
+            }
+    },  
+
+created() {
+    axios.get('http://jsonplaceholder.typicode.com/posts')
+    .then(reponse => {
+        this.posts = reponse.data
+    })}}
+</script>
