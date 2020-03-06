@@ -40,6 +40,8 @@ export default {
     
     data: () => ({
         items: [
+            new Date(),
+            new Date(),
             new Date()
         ]
     })
