@@ -3,9 +3,11 @@
         <v-row class="text-center">
                 <div style="width: 30%; margin: 1.66%">
                     <h3 class="headline">Read HaandVaerker</h3>
+                    <li v-for="post in posts" :key="post">{{post}}</li>
                 </div>
                 <div style="width: 30%; margin: 1.66%">
                     <h3 class="headline">Read Vaerkstoejskasse</h3>
+                    <li v-for="todo in todos" :key="todo">{{todo}}</li>
                 </div>
                 <div style="width: 30%; margin: 1.66%">
                     <h3 class="headline">Read HaandVaerker</h3>
@@ -17,17 +19,27 @@
 
 <script>
 import axios from 'axios';
+import { jsonPlaceholder } from '../variables'
+
 
 export default {
     data() {
         return {
-            posts: []
+            posts: [],
+            todos: []
             }
     },  
 
 created() {
-    axios.get('http://jsonplaceholder.typicode.com/posts')
+    axios.get('http://' + jsonPlaceholder + '/posts')
     .then(reponse => {
         this.posts = reponse.data
-    })}}
+    }),
+
+    axios.get('http://' + jsonPlaceholder + '/todos/1')
+    .then(reponse => {
+        this.todos = reponse.data
+    })},
+    
+ }
 </script>
