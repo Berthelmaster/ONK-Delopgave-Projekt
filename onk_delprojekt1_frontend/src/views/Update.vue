@@ -5,7 +5,7 @@
                     <h3 class="headline">Update HaandVaerker</h3>
                     <form>
                         <v-text-field v-model="Id" label="Id"></v-text-field>
-                        <v-text-field v-model="Firstname" label="First name"></v-text-field>
+                        <v-text-field v-model="HVFornavn" label="First name"></v-text-field>
                         <v-btn class="mr-4" @click="submit">submit</v-btn>
                     </form>
                 </div>
@@ -20,8 +20,31 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 
 export default {
+
     
+    data: () => ({
+      Id: '',
+      HVFornavn: '',
+
+      haandvaerker: ''
+
+    }),
+
+    methods: {
+    submit(){
+        console.log(this.IdHaandvaerker)
+        console.log(this.HVFornavn)
+        axios.put('https://localhost:44339/api/Haandvaerkers/' + this.Id, {
+            HaandvaerkerId: Number(this.Id),
+            HVFornavn: this.HVFornavn,
+            HVFagomraade: "Fodboldspiller",
+            HVEfternavn: "Stage"
+        })
+    }
+}
 }
 </script>

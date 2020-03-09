@@ -3,16 +3,7 @@
         <v-row class="text-center">
                 <div style="width: 30%; margin: 1.66%">
                     <h3 class="headline">Create HaandVaerker</h3>
-                    <v-form
-                        ref="form"
-                        v-model="valid"
-                        lazy-validation>
-
-                        <v-select
-                        v-model="select"
-                        :items="items"
-                        label="Start Date"
-                        ></v-select>
+                    <form>
 
                         <v-text-field v-model="Surname" label="Surname">
                         </v-text-field>
@@ -22,8 +13,8 @@
 
                         <v-text-field v-model="firstName" label="First name">
                         </v-text-field>
-                        <v-btn class="mr-4" @click="submit">submit</v-btn>
-                    </v-form>
+                        <v-btn class="mr-4" @click="formSubmit()">submit</v-btn>
+                    </form>
                 </div>
                 <div style="width: 30%; margin: 1.66%">
                     <h3 class="headline">Create Vaerkstoejskasse</h3>
@@ -56,7 +47,7 @@
                         <v-text-field v-model="VTKSerienummer " label="VTKSerienummer ">
                         </v-text-field>
 
-                        <v-text-field v-model="VTKSerienummer " label="VTKSerienummer ">
+                        <v-text-field v-model="VTKSerienummer" label="VTKSerienummer ">
                         </v-text-field>
                     <v-btn class="mr-4" @click="submit">submit</v-btn>
                     </v-form>
@@ -100,13 +91,35 @@
 
 export default {
     
-    data: () => ({
-        items: [
-            new Date(),
-            new Date(),
-            new Date(),
-            new Date()
-        ]
-    })
+    
+
+
+
+
+    data() {
+        return {
+            Surname: '',
+            Field: '',
+            firstName: ''
+        }
+    },
+    methods: {
+            formSubmit() {
+                
+                let currentObj = this;
+                this.axios.post('https://localhost:44339/api/Haandvaerkers', {
+                    HVAnsaettelsedato: new Date(),
+                    HVEfternavn: this.Surname,
+                    HVFagomraade: this.Field,
+                    HVFornavn: this.firstName
+                })
+                .then(function (response) {
+                    currentObj.output = response.data;
+                })
+                .catch(function (error) {
+                    currentObj.output = error;
+                });
+            }
+        }
 }
 </script>

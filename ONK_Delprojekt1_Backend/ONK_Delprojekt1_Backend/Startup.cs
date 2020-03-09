@@ -49,7 +49,10 @@ namespace ONK_Delprojekt1_Backend
 
             app.UseCors(builder =>
             {
-                builder.WithOrigins("http://localhost:8080", "https://localhost:8080", "https://linkancestors.com", "http://linkancestors.com");
+                builder.WithOrigins("http://localhost:8080", "https://localhost:8080");
+                builder.AllowAnyHeader();
+                builder.AllowAnyOrigin();
+                builder.AllowAnyMethod();
             });
 
             app.UseRouting();
