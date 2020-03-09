@@ -22,6 +22,8 @@ namespace ONK_Delprojekt1_Backend
             Configuration = configuration;
         }
 
+  
+
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -30,7 +32,9 @@ namespace ONK_Delprojekt1_Backend
             services.AddControllers();
             //services.AddDbContext<AppDbContext>();
             services.AddDbContext<AppDbContext>(options => 
-                options.UseSqlServer(Configuration.GetConnectionString("F20ITONKK8sConnExt")));
+                options.UseSqlServer(Configuration.GetConnectionString("localDb")));
+
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,6 +46,11 @@ namespace ONK_Delprojekt1_Backend
             }
             context.Database.Migrate();
             app.UseHttpsRedirection();
+
+            app.UseCors(builder =>
+            {
+                builder.WithOrigins("http://localhost:8080", "https://localhost:8080", "https://linkancestors.com", "http://linkancestors.com");
+            });
 
             app.UseRouting();
 

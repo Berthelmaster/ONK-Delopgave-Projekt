@@ -19,7 +19,6 @@
 
 <script>
 import axios from 'axios';
-import { jsonPlaceholder } from '../variables'
 
 
 export default {
@@ -31,15 +30,11 @@ export default {
     },  
 
 created() {
-    axios.get('http://' + jsonPlaceholder + '/posts')
+    axios.get('https://localhost:44339/api/Haandvaerkers')
     .then(reponse => {
         this.posts = reponse.data
-    }),
-
-    axios.get('http://' + jsonPlaceholder + '/todos/1')
-    .then(reponse => {
-        this.todos = reponse.data
-    })},
+    })
     
  }
+}
 </script>

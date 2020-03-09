@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ONK_Delprojekt1_Backend.Data;
 
 namespace ONK_Delprojekt1_Backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200309135138_test")]
+    partial class test
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,7 +48,7 @@ namespace ONK_Delprojekt1_Backend.Migrations
                         new
                         {
                             HaandvaerkerId = 1,
-                            HVAnsaettelsedato = new DateTime(2020, 3, 9, 14, 53, 45, 691, DateTimeKind.Local).AddTicks(528),
+                            HVAnsaettelsedato = new DateTime(2020, 3, 9, 14, 51, 37, 194, DateTimeKind.Local).AddTicks(9888),
                             HVEfternavn = "Hansen",
                             HVFagomraade = "Byggeri",
                             HVFornavn = "Hans"
@@ -91,7 +93,7 @@ namespace ONK_Delprojekt1_Backend.Migrations
                         new
                         {
                             VTId = 1L,
-                            VTAnskaffet = new DateTime(2020, 3, 9, 14, 53, 45, 701, DateTimeKind.Local).AddTicks(1784),
+                            VTAnskaffet = new DateTime(2020, 3, 9, 14, 51, 37, 203, DateTimeKind.Local).AddTicks(494),
                             VTFabrikat = "Test fabrikat",
                             VTModel = "QC521",
                             VTSerienr = "2011064688",
@@ -137,7 +139,7 @@ namespace ONK_Delprojekt1_Backend.Migrations
                         new
                         {
                             VTKId = 1,
-                            VTKAnskaffet = new DateTime(2020, 3, 9, 14, 53, 45, 702, DateTimeKind.Local).AddTicks(7564),
+                            VTKAnskaffet = new DateTime(2020, 3, 9, 14, 51, 37, 204, DateTimeKind.Local).AddTicks(2142),
                             VTKFabrikat = "Test fabrikat",
                             VTKFarve = "Blaa",
                             VTKModel = "AN521",
