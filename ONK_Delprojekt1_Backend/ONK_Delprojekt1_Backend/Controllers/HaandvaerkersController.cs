@@ -23,16 +23,16 @@ namespace ONK_Delprojekt1_Backend.Controllers
 
         // GET: api/Haandvaerkers
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Haandvaerker>>> GetHaandvaerkerer()
+        public async Task<ActionResult<IEnumerable<Haandvaerker>>> GetHaandvaerkers()
         {
-            return await _context.Haandvaerkerer.ToListAsync();
+            return await _context.Haandvaerkers.ToListAsync();
         }
 
         // GET: api/Haandvaerkers/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Haandvaerker>> GetHaandvaerker(int id)
         {
-            var haandvaerker = await _context.Haandvaerkerer.FindAsync(id);
+            var haandvaerker = await _context.Haandvaerkers.FindAsync(id);
 
             if (haandvaerker == null)
             {
@@ -80,7 +80,7 @@ namespace ONK_Delprojekt1_Backend.Controllers
         [HttpPost]
         public async Task<ActionResult<Haandvaerker>> PostHaandvaerker(Haandvaerker haandvaerker)
         {
-            _context.Haandvaerkerer.Add(haandvaerker);
+            _context.Haandvaerkers.Add(haandvaerker);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetHaandvaerker", new { id = haandvaerker.HaandvaerkerId }, haandvaerker);
@@ -90,13 +90,13 @@ namespace ONK_Delprojekt1_Backend.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<Haandvaerker>> DeleteHaandvaerker(int id)
         {
-            var haandvaerker = await _context.Haandvaerkerer.FindAsync(id);
+            var haandvaerker = await _context.Haandvaerkers.FindAsync(id);
             if (haandvaerker == null)
             {
                 return NotFound();
             }
 
-            _context.Haandvaerkerer.Remove(haandvaerker);
+            _context.Haandvaerkers.Remove(haandvaerker);
             await _context.SaveChangesAsync();
 
             return haandvaerker;
@@ -104,7 +104,7 @@ namespace ONK_Delprojekt1_Backend.Controllers
 
         private bool HaandvaerkerExists(int id)
         {
-            return _context.Haandvaerkerer.Any(e => e.HaandvaerkerId == id);
+            return _context.Haandvaerkers.Any(e => e.HaandvaerkerId == id);
         }
     }
 }

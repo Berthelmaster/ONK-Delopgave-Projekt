@@ -23,16 +23,16 @@ namespace ONK_Delprojekt1_Backend.Controllers
 
         // GET: api/Vaerktoejskasses
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Vaerktoejskasse>>> GetVaerktoejskasser()
+        public async Task<ActionResult<IEnumerable<Vaerktoejskasse>>> GetVaerktoejskasses()
         {
-            return await _context.Vaerktoejskasser.ToListAsync();
+            return await _context.Vaerktoejskasses.ToListAsync();
         }
 
         // GET: api/Vaerktoejskasses/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Vaerktoejskasse>> GetVaerktoejskasse(int id)
         {
-            var vaerktoejskasse = await _context.Vaerktoejskasser.FindAsync(id);
+            var vaerktoejskasse = await _context.Vaerktoejskasses.FindAsync(id);
 
             if (vaerktoejskasse == null)
             {
@@ -80,7 +80,7 @@ namespace ONK_Delprojekt1_Backend.Controllers
         [HttpPost]
         public async Task<ActionResult<Vaerktoejskasse>> PostVaerktoejskasse(Vaerktoejskasse vaerktoejskasse)
         {
-            _context.Vaerktoejskasser.Add(vaerktoejskasse);
+            _context.Vaerktoejskasses.Add(vaerktoejskasse);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetVaerktoejskasse", new { id = vaerktoejskasse.VTKId }, vaerktoejskasse);
@@ -90,13 +90,13 @@ namespace ONK_Delprojekt1_Backend.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<Vaerktoejskasse>> DeleteVaerktoejskasse(int id)
         {
-            var vaerktoejskasse = await _context.Vaerktoejskasser.FindAsync(id);
+            var vaerktoejskasse = await _context.Vaerktoejskasses.FindAsync(id);
             if (vaerktoejskasse == null)
             {
                 return NotFound();
             }
 
-            _context.Vaerktoejskasser.Remove(vaerktoejskasse);
+            _context.Vaerktoejskasses.Remove(vaerktoejskasse);
             await _context.SaveChangesAsync();
 
             return vaerktoejskasse;
@@ -104,7 +104,7 @@ namespace ONK_Delprojekt1_Backend.Controllers
 
         private bool VaerktoejskasseExists(int id)
         {
-            return _context.Vaerktoejskasser.Any(e => e.VTKId == id);
+            return _context.Vaerktoejskasses.Any(e => e.VTKId == id);
         }
     }
 }

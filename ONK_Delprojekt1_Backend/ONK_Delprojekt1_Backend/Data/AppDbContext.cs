@@ -19,9 +19,9 @@ namespace ONK_Delprojekt1_Backend.Data
             {
             }
 
-            public DbSet<Haandvaerker> Haandvaerkerer { get; set; }
-            public DbSet<Vaerktoej> Vaerktoejer { get; set; }
-            public DbSet<Vaerktoejskasse> Vaerktoejskasser{ get; set; }
+            public DbSet<Haandvaerker> Haandvaerkers { get; set; }
+            public DbSet<Vaerktoej> Vaerktoejs { get; set; }
+            public DbSet<Vaerktoejskasse> Vaerktoejskasses { get; set; }
 
 
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -34,15 +34,24 @@ namespace ONK_Delprojekt1_Backend.Data
         //}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-            {
-                modelBuilder.Entity<Vaerktoej>()
-                    .HasOne(vk => vk.LiggerIvtkNavigation)
-                    .WithMany(v => v.Vaerktoej);
+        {
+            modelBuilder.Entity<Vaerktoej>()
+                .HasOne(vk => vk.LiggerIvtkNavigation)
+                .WithMany(v => v.Vaerktoej);
 
-                modelBuilder.Entity<Vaerktoejskasse>()
-                    .HasOne(h => h.EjesAfNavigation)
-                    .WithMany(vk => vk.Vaerktoejskasse);
-            }
+            modelBuilder.Entity<Vaerktoejskasse>()
+                .HasOne(h => h.EjesAfNavigation)
+                .WithMany(vk => vk.Vaerktoejskasse);
 
+            SeedData(modelBuilder);
         }
+
+
+        private void SeedData (ModelBuilder builder)
+        {
+            builder.Entity<Haandvaerker>().HasData(new Haandvaerker{HaandvaerkerId = 1,
+                HVAnsaettelsedato = DateTime.Now, HVEfternavn = "Hansen", HVFagomraade = "Byggeri", HVFornavn = "Hans",
+                Vaerktoejskasse = null });
+        }
+    }
 }

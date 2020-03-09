@@ -3,12 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ONK_Delprojekt1_Backend.Migrations
 {
-    public partial class dbServTest : Migration
+    public partial class gr14CreateDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Haandvaerkerer",
+                name: "Haandvaerkers",
                 columns: table => new
                 {
                     HaandvaerkerId = table.Column<int>(nullable: false)
@@ -20,11 +20,11 @@ namespace ONK_Delprojekt1_Backend.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Haandvaerkerer", x => x.HaandvaerkerId);
+                    table.PrimaryKey("PK_Haandvaerkers", x => x.HaandvaerkerId);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Vaerktoejskasser",
+                name: "Vaerktoejskasses",
                 columns: table => new
                 {
                     VTKId = table.Column<int>(nullable: false)
@@ -39,17 +39,17 @@ namespace ONK_Delprojekt1_Backend.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Vaerktoejskasser", x => x.VTKId);
+                    table.PrimaryKey("PK_Vaerktoejskasses", x => x.VTKId);
                     table.ForeignKey(
-                        name: "FK_Vaerktoejskasser_Haandvaerkerer_EjesAfNavigationHaandvaerkerId",
+                        name: "FK_Vaerktoejskasses_Haandvaerkers_EjesAfNavigationHaandvaerkerId",
                         column: x => x.EjesAfNavigationHaandvaerkerId,
-                        principalTable: "Haandvaerkerer",
+                        principalTable: "Haandvaerkers",
                         principalColumn: "HaandvaerkerId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Vaerktoejer",
+                name: "Vaerktoejs",
                 columns: table => new
                 {
                     VTId = table.Column<long>(nullable: false)
@@ -64,36 +64,41 @@ namespace ONK_Delprojekt1_Backend.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Vaerktoejer", x => x.VTId);
+                    table.PrimaryKey("PK_Vaerktoejs", x => x.VTId);
                     table.ForeignKey(
-                        name: "FK_Vaerktoejer_Vaerktoejskasser_LiggerIvtkNavigationVTKId",
+                        name: "FK_Vaerktoejs_Vaerktoejskasses_LiggerIvtkNavigationVTKId",
                         column: x => x.LiggerIvtkNavigationVTKId,
-                        principalTable: "Vaerktoejskasser",
+                        principalTable: "Vaerktoejskasses",
                         principalColumn: "VTKId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
+            migrationBuilder.InsertData(
+                table: "Haandvaerkers",
+                columns: new[] { "HaandvaerkerId", "HVAnsaettelsedato", "HVEfternavn", "HVFagomraade", "HVFornavn" },
+                values: new object[] { 1, new DateTime(2020, 3, 9, 10, 55, 22, 472, DateTimeKind.Local).AddTicks(2089), "Hansen", "Byggeri", "Hans" });
+
             migrationBuilder.CreateIndex(
-                name: "IX_Vaerktoejer_LiggerIvtkNavigationVTKId",
-                table: "Vaerktoejer",
+                name: "IX_Vaerktoejs_LiggerIvtkNavigationVTKId",
+                table: "Vaerktoejs",
                 column: "LiggerIvtkNavigationVTKId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Vaerktoejskasser_EjesAfNavigationHaandvaerkerId",
-                table: "Vaerktoejskasser",
+                name: "IX_Vaerktoejskasses_EjesAfNavigationHaandvaerkerId",
+                table: "Vaerktoejskasses",
                 column: "EjesAfNavigationHaandvaerkerId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Vaerktoejer");
+                name: "Vaerktoejs");
 
             migrationBuilder.DropTable(
-                name: "Vaerktoejskasser");
+                name: "Vaerktoejskasses");
 
             migrationBuilder.DropTable(
-                name: "Haandvaerkerer");
+                name: "Haandvaerkers");
         }
     }
 }

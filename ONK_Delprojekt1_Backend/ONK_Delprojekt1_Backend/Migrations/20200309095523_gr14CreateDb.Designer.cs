@@ -10,8 +10,8 @@ using ONK_Delprojekt1_Backend.Data;
 namespace ONK_Delprojekt1_Backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20200305110539_dbServTest")]
-    partial class dbServTest
+    [Migration("20200309095523_gr14CreateDb")]
+    partial class gr14CreateDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -42,7 +42,17 @@ namespace ONK_Delprojekt1_Backend.Migrations
 
                     b.HasKey("HaandvaerkerId");
 
-                    b.ToTable("Haandvaerkerer");
+                    b.ToTable("Haandvaerkers");
+
+                    b.HasData(
+                        new
+                        {
+                            HaandvaerkerId = 1,
+                            HVAnsaettelsedato = new DateTime(2020, 3, 9, 10, 55, 22, 472, DateTimeKind.Local).AddTicks(2089),
+                            HVEfternavn = "Hansen",
+                            HVFagomraade = "Byggeri",
+                            HVFornavn = "Hans"
+                        });
                 });
 
             modelBuilder.Entity("ONK_Delprojekt1_Backend.Models.Vaerktoej", b =>
@@ -77,7 +87,7 @@ namespace ONK_Delprojekt1_Backend.Migrations
 
                     b.HasIndex("LiggerIvtkNavigationVTKId");
 
-                    b.ToTable("Vaerktoejer");
+                    b.ToTable("Vaerktoejs");
                 });
 
             modelBuilder.Entity("ONK_Delprojekt1_Backend.Models.Vaerktoejskasse", b =>
@@ -112,7 +122,7 @@ namespace ONK_Delprojekt1_Backend.Migrations
 
                     b.HasIndex("EjesAfNavigationHaandvaerkerId");
 
-                    b.ToTable("Vaerktoejskasser");
+                    b.ToTable("Vaerktoejskasses");
                 });
 
             modelBuilder.Entity("ONK_Delprojekt1_Backend.Models.Vaerktoej", b =>

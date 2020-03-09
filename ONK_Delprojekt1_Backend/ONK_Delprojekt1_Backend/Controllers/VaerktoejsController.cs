@@ -23,16 +23,16 @@ namespace ONK_Delprojekt1_Backend.Controllers
 
         // GET: api/Vaerktoejs
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Vaerktoej>>> GetVaerktoejer()
+        public async Task<ActionResult<IEnumerable<Vaerktoej>>> GetVaerktoejs()
         {
-            return await _context.Vaerktoejer.ToListAsync();
+            return await _context.Vaerktoejs.ToListAsync();
         }
 
         // GET: api/Vaerktoejs/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Vaerktoej>> GetVaerktoej(long id)
         {
-            var vaerktoej = await _context.Vaerktoejer.FindAsync(id);
+            var vaerktoej = await _context.Vaerktoejs.FindAsync(id);
 
             if (vaerktoej == null)
             {
@@ -80,7 +80,7 @@ namespace ONK_Delprojekt1_Backend.Controllers
         [HttpPost]
         public async Task<ActionResult<Vaerktoej>> PostVaerktoej(Vaerktoej vaerktoej)
         {
-            _context.Vaerktoejer.Add(vaerktoej);
+            _context.Vaerktoejs.Add(vaerktoej);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetVaerktoej", new { id = vaerktoej.VTId }, vaerktoej);
@@ -90,13 +90,13 @@ namespace ONK_Delprojekt1_Backend.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<Vaerktoej>> DeleteVaerktoej(long id)
         {
-            var vaerktoej = await _context.Vaerktoejer.FindAsync(id);
+            var vaerktoej = await _context.Vaerktoejs.FindAsync(id);
             if (vaerktoej == null)
             {
                 return NotFound();
             }
 
-            _context.Vaerktoejer.Remove(vaerktoej);
+            _context.Vaerktoejs.Remove(vaerktoej);
             await _context.SaveChangesAsync();
 
             return vaerktoej;
@@ -104,7 +104,7 @@ namespace ONK_Delprojekt1_Backend.Controllers
 
         private bool VaerktoejExists(long id)
         {
-            return _context.Vaerktoejer.Any(e => e.VTId == id);
+            return _context.Vaerktoejs.Any(e => e.VTId == id);
         }
     }
 }

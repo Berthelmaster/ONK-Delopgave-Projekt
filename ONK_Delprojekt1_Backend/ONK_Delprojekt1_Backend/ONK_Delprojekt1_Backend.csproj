@@ -5,21 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20200224144239_setupDB.cs" />
-    <Compile Remove="Migrations\20200224144239_setupDB.Designer.cs" />
-    <Compile Remove="Migrations\20200224144902_setupDB.cs" />
-    <Compile Remove="Migrations\20200224144902_setupDB.Designer.cs" />
-    <Compile Remove="Migrations\20200224150341_addedCtorsToModels.cs" />
-    <Compile Remove="Migrations\20200224150341_addedCtorsToModels.Designer.cs" />
-    <Compile Remove="Migrations\20200305090012_mssqlCreateDB.cs" />
-    <Compile Remove="Migrations\20200305090012_mssqlCreateDB.Designer.cs" />
-    <Compile Remove="Migrations\20200305090343_mssqlCreatedDB.cs" />
-    <Compile Remove="Migrations\20200305090343_mssqlCreatedDB.Designer.cs" />
-    <Compile Remove="Migrations\20200305091337_mssqlCreatedDB.cs" />
-    <Compile Remove="Migrations\20200305091337_mssqlCreatedDB.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.2" />
