@@ -52,6 +52,30 @@ namespace ONK_Delprojekt1_Backend.Data
             builder.Entity<Haandvaerker>().HasData(new Haandvaerker{HaandvaerkerId = 1,
                 HVAnsaettelsedato = DateTime.Now, HVEfternavn = "Hansen", HVFagomraade = "Byggeri", HVFornavn = "Hans",
                 Vaerktoejskasse = null });
+            builder.Entity<Vaerktoej>().HasData(new Vaerktoej
+            {
+                VTId = 1,
+                VTAnskaffet = DateTime.Now,
+                VTFabrikat = "Test fabrikat",
+                VTModel = "QC521",
+                VTSerienr = "2011064688",
+                VTType = "Skruetrækker",
+                LiggerIvtk = null,
+                LiggerIvtkNavigation = null
+            });
+            builder.Entity<Vaerktoejskasse>().HasData(new Vaerktoejskasse
+            {
+                VTKId = 1,
+                VTKAnskaffet = DateTime.Now,
+                VTKFabrikat = "Test fabrikat",
+                VTKEjesAf = null,
+                VTKModel = "AN521",
+                VTKSerienummer = "2019064688",
+                VTKFarve = "Blaa",
+                EjesAfNavigation = null,
+                Vaerktoej = null
+            });
+
         }
     }
 }
