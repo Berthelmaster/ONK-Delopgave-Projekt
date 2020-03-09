@@ -13,7 +13,7 @@
 
                         <v-text-field v-model="firstName" label="First name">
                         </v-text-field>
-                        <v-btn class="mr-4" @click="formSubmit()">submit</v-btn>
+                        <v-btn class="mr-4" @click="submit">submit</v-btn>
                     </form>
                 </div>
                 <div style="width: 30%; margin: 1.66%">
@@ -87,6 +87,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 
 
 export default {
@@ -96,30 +97,21 @@ export default {
 
 
 
-    data() {
-        return {
-            Surname: '',
-            Field: '',
-            firstName: ''
-        }
-    },
+    data: () => ({
+      Surname: '',
+      Field: '',
+      firstName: ''
+
+    }),
     methods: {
-            formSubmit() {
-                
-                let currentObj = this;
-                this.axios.post('https://localhost:44339/api/Haandvaerkers', {
-                    HVAnsaettelsedato: new Date(),
-                    HVEfternavn: this.Surname,
-                    HVFagomraade: this.Field,
-                    HVFornavn: this.firstName
-                })
-                .then(function (response) {
-                    currentObj.output = response.data;
-                })
-                .catch(function (error) {
-                    currentObj.output = error;
-                });
-            }
-        }
+    submit(){
+        axios.post('https://localhost:44339/api/Haandvaerkers/', {
+            HVFornavn: this.firstName,
+            HVFagomraade: this.Field,
+            HVEfternavn: this.Surname,
+            HVAnsaettelsedato: new Date()
+        })
+    }
+}
 }
 </script>
