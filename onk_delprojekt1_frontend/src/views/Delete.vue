@@ -33,12 +33,6 @@ export default {
      data: () => ({
       IdHaandvaerker: '',
     }),
-
-created() {
-    axios.get('http://jsonplaceholder.typicode.com/posts')
-    .then(reponse => {
-        this.posts = reponse.data
-    })},
     
 methods: {
     submit(){

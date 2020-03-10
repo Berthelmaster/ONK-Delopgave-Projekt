@@ -35,6 +35,7 @@ created() {
         this.posts = reponse.data
     })
     
- }
+ },
+ 
 }
 </script>

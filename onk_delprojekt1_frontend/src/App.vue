@@ -7,9 +7,9 @@
     >
      <v-toolbar-items>
         <v-btn to="/">Frontpage</v-btn>
-        <v-btn to="/Create">Create</v-btn>
+        <v-btn to="/Post">Post</v-btn>
         <v-btn to="/Delete">Delete</v-btn>
-        <v-btn to="/Read">Read</v-btn>
+        <v-btn to="/Get">Get</v-btn>
         <v-btn to="/Update">Update</v-btn>
       </v-toolbar-items>
       
