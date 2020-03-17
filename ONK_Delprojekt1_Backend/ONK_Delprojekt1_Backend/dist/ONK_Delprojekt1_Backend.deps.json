@@ -702,12 +702,6 @@
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
           "Microsoft.EntityFrameworkCore.Relational": "3.1.2"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll": {
-            "assemblyVersion": "3.1.2.0",
-            "fileVersion": "3.100.220.6703"
-          }
         }
       },
       "Microsoft.EntityFrameworkCore.Relational/3.1.2": {
