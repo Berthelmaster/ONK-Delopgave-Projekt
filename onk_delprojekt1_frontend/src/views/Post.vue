@@ -88,6 +88,7 @@
 
 <script>
 import axios from 'axios';
+import { backendService } from '../variables'
 
 
 export default {
@@ -105,7 +106,7 @@ export default {
     }),
     methods: {
     submit(){
-        axios.post('https://localhost:44339/api/Haandvaerkers/', {
+        axios.post('http://' + backendService + '/api/Haandvaerkers/', {
             HVFornavn: this.firstName,
             HVFagomraade: this.Field,
             HVEfternavn: this.Surname,

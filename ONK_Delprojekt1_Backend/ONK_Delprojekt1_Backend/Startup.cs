@@ -34,6 +34,8 @@ namespace ONK_Delprojekt1_Backend
             services.AddDbContext<AppDbContext>(options => 
                 options.UseSqlServer(Configuration.GetConnectionString("F20ITONKK8sConnExt")));
 
+            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
