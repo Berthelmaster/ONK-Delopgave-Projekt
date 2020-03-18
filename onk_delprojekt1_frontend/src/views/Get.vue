@@ -19,6 +19,8 @@
 
 <script>
 import axios from 'axios';
+import { backendService } from '../variables'
+
 
 
 export default {
@@ -30,7 +32,7 @@ export default {
     },  
 
 created() {
-    axios.get('https://localhost:44339/api/Haandvaerkers')
+    axios.get('http://' + backendService + '/api/Haandvaerkers')
     .then(reponse => {
         this.posts = reponse.data
     })

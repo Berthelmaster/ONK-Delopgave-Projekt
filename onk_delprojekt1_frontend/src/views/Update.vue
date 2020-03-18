@@ -21,6 +21,7 @@
 
 <script>
 import axios from 'axios';
+import { backendService } from '../variables'
 
 
 export default {
@@ -38,7 +39,7 @@ export default {
     submit(){
         console.log(this.IdHaandvaerker)
         console.log(this.HVFornavn)
-        axios.put('https://localhost:44339/api/Haandvaerkers/' + this.Id, {
+        axios.put('http://' + backendService + '/api/Haandvaerkers/' + this.Id, {
             HaandvaerkerId: Number(this.Id),
             HVFornavn: this.HVFornavn,
             HVFagomraade: "Fodboldspiller",

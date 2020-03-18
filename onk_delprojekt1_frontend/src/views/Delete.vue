@@ -28,6 +28,7 @@
 
 <script>
 import axios from 'axios';
+import { backendService } from '../variables'
 
 export default {
      data: () => ({
@@ -37,7 +38,7 @@ export default {
 methods: {
     submit(){
         console.log(this.IdHaandvaerker)
-        axios.delete('https://localhost:44339/api/Haandvaerkers/' + this.IdHaandvaerker)
+        axios.delete('http://' + backendService + '/api/Haandvaerkers/' + this.IdHaandvaerker)
     }
 }
     }
